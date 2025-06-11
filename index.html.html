@@ -1,0 +1,572 @@
+<!DOCTYPE html> fx
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prince mehra | Developer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --dark-bg: #0b0b0b;
+      --gold: #ffd700;
+      --light-text: #f1f1f1;
+      --accent: #ffda77;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+
+    header {
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: #FFD700;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+      animation: slideDown 1s ease-out forwards;
+      opacity: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border-bottom: 2px solid #FFD700;
+    }
+
+    @keyframes slideDown {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      60% {
+        transform: translateY(10%);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.7);
+    }
+
+    @keyframes slideDown {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+
+
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+      text-shadow: 0 0 10px var(--gold);
+    }
+
+    section {
+      padding: 100px 0 60px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 40px;
+      color: var(--gold);
+      position: relative;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      margin: 10px auto 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .hero img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px var(--gold);
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: var(--gold);
+      text-shadow: 0 0 10px var(--gold);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px 25px;
+      background: var(--gold);
+      color: #000;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 0 10px var(--gold);
+    }
+
+    .btn:hover {
+      background: #fff2a8;
+      transform: scale(1.05);
+    }
+
+
+
+
+
+    .skills-container,
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card,
+    .project-card {
+      background: #161616;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      position: relative;
+    }
+
+    .skill-card:hover,
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+
+    .skill-card i,
+    .project-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 25px 0;
+      margin-top: 50px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      font-size: 1.4rem;
+      color: #aaa;
+      transition: var(--transition);
+    }
+
+    .socials a:hover {
+      color: var(--gold);
+      text-shadow: 0 0 10px var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">Prince mehra</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="https://t.ly/D_xAd">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="container">
+      <img src="static/p1.jpg" alt="Profile Image" />
+      <h1>Hi, I'm Prince mehra</h1>
+      <p>Developer | Python | React | Web Enthusiast</p>
+      <a href="https://t.ly/D_xAd" class="btn">Let's Connect</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content hidden show">
+        <p>I'm a curious and driven developer who loves turning ideas into functional web applications. What started as
+          an interest in Python has grown into a full-fledged passion for modern web technologies and clean, efficient
+          code.
+          Beyond the screen, I enjoy diving into new tech stacks, collaborating on open-source initiatives, and keeping
+          up with innovations in software development. I've also had the opportunity to work with Veriyant and IESAAA,
+          which helped sharpen my practical skills and broaden my experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-container">
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <h3>Programming</h3>
+          <p>Python, JavaScript, SQL</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-globe"></i>
+          <h3>Web Development</h3>
+          <p>HTML, CSS, Bootstrap, Flask</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-tools"></i>
+          <h3>Developer Tools</h3>
+          <p>GitHub, VS Code, Tkinter</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-brain"></i>
+          <h3>Problem Solving</h3>
+          <p>Algorithms, Debugging, Critical Thinking</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-users"></i>
+          <h3>Teamwork</h3>
+          <p>Collaboration, Communication, Leadership</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Creativity</h3>
+          <p>UI/UX Thinking, Design Patterns</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <img src="https://i.ibb.co/GfF9RgDT/Flux-Dev-depict-a-digital-illustration-of-a-light-bulb-situate-0.jpg"
+            alt="Bulb GUI" />
+          <h3>Bulb GUI App</h3>
+          <p>Python + Tkinter-based light switch app.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://i.ibb.co/dwfMZwQF/Screenshot-249.png" alt="Ecommerce Website" />
+          <h3>Recursive Club Website</h3>
+          <p>Responsive built with HTML, CSS, JS.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://i.ibb.co/wNNxFR2M/Chat-GPT-Image-May-16-2025-01-04-33-PM.png" alt="Calculator" />
+          <h3>Scientific Calculator</h3>
+          <p>Advanced Python calculator project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="education-container">
+        <div class="education-item hidden show">
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+          <p>University of Kota</p>
+          <p class="date">2025 - Present</p>
+        </div>
+        <div class="education-item hidden show">
+          <h3>12th Grade (Senior Secondary)</h3>
+          <p>RBSE Board</p>
+          <p class="date">Passed in 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="certificates-section">
+    <div class="container">
+      <h2 class="section-title">Certificates</h2>
+      <div class="certificates-container">
+        <div class="certificate-card hidden show">
+          <i class="fas fa-certificate"></i>
+          <h3>Python Masterclass</h3>
+          <p>Udemy</p>
+          <p>Completed comprehensive Python programming course covering fundamentals to advanced concepts.</p>
+        </div>
+        <div class="certificate-card hidden show">
+          <i class="fas fa-certificate"></i>
+          <h3>HTML Certificate</h3>
+          <p>Udemy</p>
+          <p>Mastered HTML5 including semantic markup, forms, and accessibility best practices.</p>
+        </div>
+        <div class="certificate-card hidden show">
+          <i class="fas fa-certificate"></i>
+          <h3>Bootstrap Certificate</h3>
+          <p>Udemy</p>
+          <p>Learned responsive web design using Bootstrap framework with practical projects.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .certificates-section {
+      background-color: #000;
+      color: gold;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .certificates-section .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: gold;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid gold;
+      display: inline-block;
+    }
+
+    .certificates-section .certificates-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .certificates-section .certificate-card {
+      background: #111;
+      border: 1px solid gold;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      color: gold;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .certificates-section .certificate-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    }
+
+    .certificates-section .certificate-card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: gold;
+    }
+
+    .certificates-section .certificate-card h3 {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .certificates-section .certificate-card p {
+      font-size: 0.95rem;
+      margin: 0.3rem 0;
+    }
+  </style>
+
+
+
+  <title>Contact</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #000;
+      font-family: sans-serif;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      /* Center horizontally */
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input,
+    textarea,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #FFD700;
+      color: #000;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e6c200;
+    }
+  </style>
+  </head>
+
+
+  <form class="contact-form" action="#" method="post">
+    <h1>Contact Us</h1>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+
+
+
+
+  <footer>
+    <div class="container">
+      <div class="socials">
+        <a href="https://github.com/princemehra9024"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/prince-mehra-562681366"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/_https.prince404?igsh=ODFtaDM1d2UzYXdt"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2025 Prince Mehra. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
